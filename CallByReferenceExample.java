@@ -1,0 +1,31 @@
+class CallByReference
+{
+    int a, b;
+
+    CallByReference(int x, int y)
+    {
+        a = x;
+        b = y;
+    }
+
+    void changeValue(CallByReference obj)
+    {
+        obj.a += 10;
+        obj.b += 20;
+    }
+}
+
+public class CallByReferenceExample
+{
+    public static void main(String args[])
+    {
+        CallByReference object = new CallByReference(10, 20);
+
+        System.out.println("Value of a: " + object.a + "  b: " + object.b);
+
+        object.changeValue(object);
+
+        System.out.println("Value of a: " + object.a + "  b: " + object.b);
+    }
+}
+
